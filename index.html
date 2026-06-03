@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Демоэкзамен | Группа 822</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.47059;
+        }
+        
+        .hero {
+            background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.003em;
+            margin-bottom: 16px;
+        }
+        
+        .hero p {
+            font-size: 21px;
+            font-weight: 400;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -0.021em;
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 12px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .accordion-button {
+            background: white;
+            color: #1d1d1f;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 20px 24px;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: white;
+            color: #1d1d1f;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,0.1);
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231d1d1f' viewBox='0 0 16 16'%3E%3Cpath d='M8 11.5l-5-5h10l-5 5z'/%3E%3C/svg%3E");
+            transition: transform 0.2s ease;
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+            transform: rotate(-180deg);
+        }
+        
+        .accordion-body {
+            padding: 0 24px 24px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #424245;
+        }
+        
+        .badge-important {
+            background: #ff3b30;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .badge-info {
+            background: #0071e3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .badge-tech {
+            background: #5856d6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .badge-warning {
+            background: #ff9f0a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+        
+        .success-box {
+            background: #d1e7dd;
+            border-left: 4px solid #198754;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0071e3;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+        
+        code {
+            background: #f5f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #d73a49;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        
+        pre {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+        
+        pre code {
+            background: transparent;
+            color: #f5f5f7;
+            padding: 0;
+        }
+        
+        .checklist-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e5ea;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: #34c759;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .day-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        
+        .day-1 { background: #e5f4ff; color: #0071e3; }
+        .day-2 { background: #ffe5e5; color: #ff3b30; }
+        
+        footer {
+            background: #1d1d1f;
+            color: #86868b;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 17px; }
+            .section-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Частые вопросы</h1>
+            <p>Всё, что нужно знать о демонстрационном экзамене группе 822</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title"> Подготовительный день</h2>
+        
+        <div class="accordion" id="faqAccordionPrep">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q30">
+                        Что будет в первый день (подготовительный)?
+                    </button>
+                </h2>
+                <div id="q30" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionPrep">
+                    <div class="accordion-body">
+                        <p>Вам дадут <strong>~1 час за компьютером</strong> (по расписанию: 10:00–11:00 или 13:00–14:00 в зависимости от смены). В это время:</p>
+                        <ul>
+                            <li>Расскажут, как и что будет проходить</li>
+                            <li>Заведут за ваши рабочие места</li>
+                            <li>Можно будет подключить сетевой диск</li>
+                            <li><strong>Можно пользоваться телефоном</strong> — это единственный день</li>
+                            <li>Можно написать себе шаблоны и заготовки кода</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Важно:</strong> Всё, что напишете в первый день, <strong>сохранится на компьютере</strong> и будет доступно во второй день. Компьютеры не чистят.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q31">
+                        Дадут ли задание в первый день?
+                    </button>
+                </h2>
+                <div id="q31" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPrep">
+                    <div class="accordion-body">
+                        <span class="badge-important">НЕТ</span>
+                        <p>Задание дадут <strong>только во второй день</strong> (день экзамена).</p>
+                        <p>В первый день вы готовите <strong>универсальные шаблоны</strong>: структура БД, авторизация, PDO-подключение, базовая вёрстка, слайдер, тест-кейсы.</p>
+                        <div class="success-box">
+                            <strong>Совет:</strong> Подготовьте файлы <code>db.php</code>, <code>auth.php</code>, шаблон подключения PDO, базовый HTML-каркас — это сэкономит много времени.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q32">
+                        Можно ли в первый день пользоваться телефоном?
+                    </button>
+                </h2>
+                <div id="q32" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPrep">
+                    <div class="accordion-body">
+                        <span class="day-badge day-1">ДЕНЬ 1</span>
+                        <span class="badge-info">ДА</span>
+                        <p>В первый день телефон <strong>не запрещён</strong>. Можно:</p>
+                        <ul>
+                            <li>Подсматривать синтаксис</li>
+                            <li>Переписывать код с телефона на компьютер</li>
+                            <li>Готовить шаблоны и заготовки</li>
+                        </ul>
+                        <p>Интернета на компьютерах нет, поэтому ничего скачать не получится — только переписывать вручную.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q33">
+                        Стоит ли просить установить Git?
+                    </button>
+                </h2>
+                <div id="q33" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPrep">
+                    <div class="accordion-body">
+                        <span class="badge-warning">БОНУСНЫЕ БАЛЛЫ</span>
+                        <p>Да! <strong>Git даёт дополнительные баллы</strong>. Нужно сделать <strong>минимум 3 коммита</strong>.</p>
+                        <p>Если планируете использовать Git — <strong>попросите установить его в первый день</strong>. Во второй день уже не получится.</p>
+                        <div class="success-box">
+                            <strong>Минимум коммитов:</strong> создание структуры → реализация БД → финальная версия. Это легко и даёт лишние баллы.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title mt-5">🎯 День экзамена</h2>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                        Во сколько начинается экзамен?
+                    </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <span class="badge-important">ВАЖНО</span>
+                        <p>Регистрация начинается в <strong>9:00</strong>. Явка строго без опозданий. Опоздавшие не допускаются к экзамену.</p>
+                        <p>Рекомендуем приходить за 15-20 минут до начала.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                        Что нужно взять с собой?
+                    </button>
+                </h2>
+                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <span class="badge-important">ОБЯЗАТЕЛЬНО</span>
+                        <p><strong>Паспорт</strong> — без него не допустят к экзамену.</p>
+                        <p>Больше ничего брать не нужно. Все материалы и оборудование предоставляются на месте.</p>
+                        <div class="warning-box">
+                            <strong>Телефон брать нельзя!</strong> Даже в кармане. Забирают — даже если не пользуетесь.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                        Какой дресс-код?
+                    </button>
+                </h2>
+                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <span class="badge-info">ТРЕБОВАНИЕ</span>
+                        <p><strong>Деловой стиль: белый верх, чёрный низ.</strong></p>
+                        <ul>
+                            <li>Рубашка / блузка / водолазка (светлая)</li>
+                            <li>Брюки / юбка (тёмные)</li>
+                            <li>Закрытая обувь</li>
+                        </ul>
+                        <div class="warning-box">
+                            Спортивные костюмы, шорты, яркие цвета — нельзя.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                        Сколько длится экзамен?
+                    </button>
+                </h2>
+                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>Общее время выполнения задания — <strong>6 часов</strong>:</p>
+                        <ul>
+                            <li>9:15 - 11:15 — выполнение задания (2 часа)</li>
+                            <li>11:15 - 11:30 — технический перерыв (15 минут)</li>
+                            <li>11:30 - 13:30 — выполнение задания (2 часа)</li>
+                            <li>13:30 - 14:00 — обед (30 минут)</li>
+                            <li>14:00 - 15:00 — выполнение задания (1 час)</li>
+                            <li>15:00 - 17:00 — работа экспертов</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Про перерывы:</strong> многие не следят за временем. Подходите к кабинету за 2 минуты до конца перерыва — вас пустят. Пару минут могут быть важны.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                        Что будет на экзамене?
+                    </button>
+                </h2>
+                <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>На выбор даётся <strong>1 из 30 вариантов заданий</strong>. Каждый вариант — это сайт с <strong>двумя связанными страницами</strong>.</p>
+                        <p>Примеры тем:</p>
+                        <ul>
+                            <li>Каталог товаров + карточка товара</li>
+                            <li>Лента новостей + страница новости с комментариями</li>
+                            <li>Каталог курсов с фильтром по направлению + страница курса с записью</li>
+                            <li>Поиск туров + бронирование</li>
+                            <li>Каталог книг + заявка на выдачу</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Совет:</strong> Все 30 вариантов похожи по структуре. Отличается только предметная область.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q34">
+                        Сколько экспертов следит за экзаменом?
+                    </button>
+                </h2>
+                <div id="q34" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>Обычно <strong>3 человека</strong>, из которых ходят по аудитории только двое. Иногда они выходят из кабинета.</p>
+                        <p>Они смотрят демонстрации экранов и проверяют, что у вас есть на компьютере.</p>
+                        <div class="success-box">
+                            <strong>Важно:</strong> не привлекайте к себе лишнее внимание, но и не нервничайте — эксперты настроены помочь, а не «завалить».
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q35">
+                        Где должны лежать файлы?
+                    </button>
+                </h2>
+                <div id="q35" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <span class="badge-tech">ТЕХНИЧЕСКОЕ</span>
+                        <p>Все файлы проекта должны находиться в <strong>специальной папке на сетевом диске</strong>.</p>
+                        <ul>
+                            <li>Сетевой диск подключаете <strong>в первый день</strong> и заново во второй</li>
+                            <li>Вам покажут, какая это папка</li>
+                            <li>На листочке будет ссылка на ваш сайт и ссылка на БД</li>
+                        </ul>
+                        <p>Сам сайт вы <strong>не запускаете</strong> — вам дадут готовую ссылку для проверки.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q36">
+                        Можно ли выходить из аудитории?
+                    </button>
+                </h2>
+                <div id="q36" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>Да, <strong>выходить можно сколько угодно</strong> в специально отведённое помещение (кабинет 313) для:</p>
+                        <ul>
+                            <li>Приёма лекарств</li>
+                            <li>Приёма пищи</li>
+                            <li>Туалета</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q37">
+                        Что дадут на компьютере?
+                    </button>
+                </h2>
+                <div id="q37" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <span class="badge-info">МАТЕРИАЛЫ</span>
+                        <p>Все необходимые материалы <strong>уже находятся на компьютере</strong>:</p>
+                        <ul>
+                            <li>Задание (PDF/текст)</li>
+                            <li>Стили и шрифты (2 шрифта на выбор)</li>
+                            <li>Тексты, фразы, адреса для сайта</li>
+                            <li>Картинки и медиа</li>
+                            <li>Справочник по HTML, CSS, Bootstrap</li>
+                            <li>VS Code с базовыми функциями</li>
+                        </ul>
+                        <p>Вам нужно только выбрать правильный шрифт из двух предложенных по заданию.</p>
+                        <div class="warning-box">
+                            <strong>PDF может не открыться</strong> — переводите в Word заранее, если нужно посмотреть шрифты. Картинки PNG тоже могут открываться в браузере и блокироваться.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title mt-5">🛠 Техническое задание</h2>
+        
+        <div class="accordion" id="faqAccordionTech">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q21">
+                        Что именно нужно сделать? (структура задания)
+                    </button>
+                </h2>
+                <div id="q21" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-tech">ТЕХНИЧЕСКАЯ ЧАСТЬ</span>
+                        <p>Любой билет = <strong>две страницы на PHP + MySQL</strong>:</p>
+                        <ul>
+                            <li><strong>Страница 1</strong> — список/каталог/лента (с фильтром или поиском)</li>
+                            <li><strong>Страница 2</strong> — детальная страница + форма действия (запись, заказ, комментарий и т.д.)</li>
+                        </ul>
+                        <p>Пример: билет №4 — <em>Каталог курсов с фильтром по направлению</em> + <em>Страница курса с кнопкой записи</em>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q22">
+                        Какая должна быть структура базы данных?
+                    </button>
+                </h2>
+                <div id="q22" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-tech">БАЗА ДАННЫХ</span>
+                        <p>Во всех билетах <strong>3 обязательные таблицы</strong>:</p>
+                        <table class="table table-bordered mt-3" style="font-size: 14px;">
+                            <thead>
+                                <tr>
+                                    <th>Таблица</th>
+                                    <th>Назначение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>users</code></td>
+                                    <td>Регистрация и авторизация</td>
+                                </tr>
+                                <tr>
+                                    <td><code>products / articles / tours / courses / doctors</code>...</td>
+                                    <td>Тематическая (по заданию)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>cart / comments / bookings / orders / requests</code>...</td>
+                                    <td>Таблица действий</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="mt-3"><strong>Обязательно указать:</strong> поля таблиц, внешние ключи, связи (например, <code>cart.user_id → users.id</code>).</p>
+                        <div class="success-box">
+                            <strong>ER-диаграмма:</strong> можно сделать скриншотом прямо из phpMyAdmin — это засчитывается. Обязательно приложить к отчёту.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q23">
+                        Обязательно ли делать авторизацию?
+                    </button>
+                </h2>
+                <div id="q23" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-important">ОБЯЗАТЕЛЬНО</span>
+                        <p>Да, во всех билетах. Требования:</p>
+                        <ul>
+                            <li><strong>Регистрация</strong> с <code>password_hash()</code></li>
+                            <li><strong>Авторизация</strong> с <code>password_verify()</code> и <code>session_start()</code></li>
+                            <li><strong>Проверка прав</strong>: неавторизованный пользователь не может выполнить действие</li>
+                        </ul>
+                        <div class="warning-box">
+                            <strong>Важно:</strong> В разных билетах условия доступа разные. Например, в одних — неавторизованный видит описание, но не может слушать; в других — только авторизованный видит контакты.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q24">
+                        Какие требования к безопасности PHP-кода?
+                    </button>
+                </h2>
+                <div id="q24" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-important">КРИТИЧНО</span>
+                        <p>Три обязательных пункта:</p>
+                        <ul>
+                            <li><strong>Все запросы к БД</strong> — через <code>PDO::prepare()</code> / <code>execute()</code></li>
+                            <li><strong>Весь вывод в HTML</strong> — через <code>htmlspecialchars()</code></li>
+                            <li><strong>Данные из <code>$_POST</code></strong> никогда не выводятся напрямую</li>
+                        </ul>
+                        <pre><code>// Пример безопасного запроса
+$stmt = $pdo->prepare("SELECT * FROM products WHERE category = ?");
+$stmt->execute([$category]);
+
+// Пример безопасного вывода
+echo htmlspecialchars($product['title']);</code></pre>
+                        <div class="success-box">
+                            <strong>Совет:</strong> Если забудете <code>htmlspecialchars()</code> — это минус баллы за безопасность.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q25">
+                        Что такое SEO-требования?
+                    </button>
+                </h2>
+                <div id="q25" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-info">SEO</span>
+                        <p>Проверяют перед сдачей. Нужно сделать <strong>на каждой странице</strong>:</p>
+                        <ul>
+                            <li>Уникальный <code>&lt;title&gt;</code></li>
+                            <li>Уникальный <code>&lt;meta name="description"&gt;</code></li>
+                            <li>Только <strong>один</strong> <code>&lt;h1&gt;</code> на страницу</li>
+                            <li>Семантические теги: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
+                            <li>Атрибут <code>alt</code> у всех <code>&lt;img&gt;</code></li>
+                        </ul>
+                        <div class="warning-box">
+                            <strong>Частая ошибка:</strong> забыть <code>alt</code> у картинок или поставить несколько <code>&lt;h1&gt;</code>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q38">
+                        Нужен ли адаптив и какой breakpoint?
+                    </button>
+                </h2>
+                <div id="q38" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-tech">ВЁРСТКА</span>
+                        <p>Да, нужен адаптив. Обязательный media-query — на <strong>390px</strong>.</p>
+                        <pre><code>@media (max-width: 390px) {
+    /* ваши стили для мобильных */
+}</code></pre>
+                        <div class="success-box">
+                            <strong>Из опыта:</strong> Даже с недоделанным адаптивом можно получить 5. Главное — сделать хоть какие-то медиа-запросы.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q39">
+                        Нужно ли подключать шрифты?
+                    </button>
+                </h2>
+                <div id="q39" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-info">ДА</span>
+                        <p>В задании дадут <strong>два шрифта</strong> — нужно выбрать правильный по контексту и подключить.</p>
+                        <p>Шрифты уже находятся на компьютере — скачивать ничего не нужно.</p>
+                        <div class="warning-box">
+                            Если PDF со шрифтами не открывается — конвертируйте в Word, иначе не сможете посмотреть, какие шрифты использовать.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q26">
+                        Нужны ли доп. фишки (слайдер, калькулятор)?
+                    </button>
+                </h2>
+                <div id="q26" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <p>Зависит от конкретного билета. Возможные доп. задания:</p>
+                        <ul>
+                            <li>Постраничная навигация (пагинация)</li>
+                            <li>Карусель / слайдер (CSS Flexbox/Grid + JS)</li>
+                            <li>Параллакс-эффект</li>
+                            <li>Калькулятор с анимацией</li>
+                            <li>Прогресс-бар</li>
+                            <li>Аудиоплеер (только для авторизованных)</li>
+                            <li>Валидация полей (например, только числа)</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Про слайдер:</strong> Можно взять из Bootstrap (подключается по ссылке прямо в код). Даже если не знаете, как писать слайдер вручную — Bootstrap-карусель засчитывается. Один студент сделал только слайдер и таблицы — получил 5.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q40">
+                        Нужно ли делать тест-кейсы?
+                    </button>
+                </h2>
+                <div id="q40" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <span class="badge-important">ОБЯЗАТЕЛЬНО</span>
+                        <p>Да! Нужно сделать <strong>3 тест-кейса</strong>:</p>
+                        <ul>
+                            <li>Несколько позитивных (нормальное поведение)</li>
+                            <li>Хотя бы 1 негативный (ошибочный сценарий)</li>
+                        </ul>
+                        <p>Формат — такой же файл с таблицами, как на подготовке.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q41">
+                        Обязательно ли делать бэкенд (PHP)?
+                    </button>
+                </h2>
+                <div id="q41" class="accordion-collapse collapse" data-bs-parent="#faqAccordionTech">
+                    <div class="accordion-body">
+                        <p>Желательно, но <strong>не обязательно для получения хорошей оценки</strong>.</p>
+                        <ul>
+                            <li>Минимум: HTML + CSS + соблюдение всех требований задания</li>
+                            <li>Оптимально: добавить авторизацию и регистрацию</li>
+                            <li>Максимум: полностью рабочий сайт с бэкендом</li>
+                        </ul>
+                        <div class="success-box">
+                            <strong>Из опыта:</strong> Студенты, сделавшие только HTML+CSS с соблюдением требований, получали 5. Главное — соблюсти требования задания и сделать ER-диаграмму + тест-кейсы.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title mt-5"> Правила поведения</h2>
+        
+        <div class="accordion" id="faqAccordion2">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+                        Можно ли пользоваться телефоном?
+                    </button>
+                </h2>
+                <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">
+                        <p><span class="day-badge day-1">ДЕНЬ 1</span> <strong>ДА</strong> — можно использовать для подготовки шаблонов.</p>
+                        <p><span class="day-badge day-2">ДЕНЬ 2</span> <strong>НЕТ</strong> — строго запрещено.</p>
+                        <div class="warning-box">
+                            <strong>Во второй день:</strong> телефон нельзя брать вообще никак — даже в кармане. Забирают даже если не пользуетесь. После экзамена возвращают.
+                        </div>
+                        <div class="info-box">
+                            <strong>Совет:</strong> В первый день подготовьте все нужные шаблоны кода — во второй день телефон не понадобится.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7">
+                        Можно ли принести шпаргалки на бумаге?
+                    </button>
+                </h2>
+                <div id="q7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">
+                        <span class="badge-important">НЕ РЕКОМЕНДУЕТСЯ</span>
+                        <p>Теоретически можно попробовать пронести, но <strong>это риск</strong>.</p>
+                        <div class="warning-box">
+                            <strong>Реальный случай:</strong> одного студента (Яну) поймали с бумажными шпаргалками — забрали. Не стоит рисковать.
+                        </div>
+                        <p>Лучше запомнить основные синтаксические конструкции и подготовить шаблоны в первый день.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8">
+                        Можно ли скачивать плагины?
+                    </button>
+                </h2>
+                <div id="q8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">
+                        <span class="badge-important">НЕТ</span>
+                        <p>Нет интернета — скачивать ничего не получится. Плагины тоже нельзя.</p>
+                        <p>Используйте только встроенные функции VS Code и справочник (HTML, CSS, Bootstrap уже на компьютере).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9">
+                        Можно ли разговаривать с другими?
+                    </button>
+                </h2>
+                <div id="q9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">
+                        <span class="badge-important">НЕТ</span>
+                        <p>Взаимодействие с другими участниками, экспертами и посторонними лицами <strong>запрещено</strong>, если это не предусмотрено заданием.</p>
+                        <p>Можно задавать вопросы только техническому эксперту по вопросам эксплуатации оборудования.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title mt-5">✅ Чек-лист перед сдачей</h2>
+        
+        <div class="accordion" id="faqAccordionCheck">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q27">
+                        Финальный чек-лист (15 пунктов)
+                    </button>
+                </h2>
+                <div id="q27" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionCheck">
+                    <div class="accordion-body">
+                        <span class="badge-important">ПРОВЕРИТЬ ПЕРЕД СДАЧЕЙ</span>
+                        
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Две страницы на PHP + MySQL</strong> — работают и связаны</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Таблицы:</strong> users + тематическая + таблица действий</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Поля и внешние ключи</strong> описаны</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>ER-диаграмма</strong> (скриншот из phpMyAdmin)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Регистрация</strong> через <code>password_hash()</code></div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Авторизация</strong> через <code>password_verify()</code> и сессии</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Все запросы</strong> через <code>PDO::prepare() / execute()</code></div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Весь вывод</strong> через <code>htmlspecialchars()</code></div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Проверка прав</strong>: неавторизованный → блокировка</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Уникальные</strong> <code>&lt;title&gt;</code> и <code>&lt;meta description&gt;</code></div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Один</strong> <code>&lt;h1&gt;</code> на страницу</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Семантические теги:</strong> header, main, nav, footer</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Атрибуты alt</strong> у всех изображений</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Адаптив</strong> под 390px</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>3 тест-кейса</strong> (позитивные + 1 негативный)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="check-icon">✓</span>
+                            <div><strong>Git:</strong> минимум 3 коммита (если используете)</div>
+                        </div>
+
+                        <div class="success-box mt-3">
+                            <strong>Итог:</strong> экзамен проверяет три навыка — <strong>проектирование БД</strong>, <strong>безопасный PHP-код</strong> и <strong>SEO-вёрстку</strong>. Всё остальное — вариации темы.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title mt-5"> Оценивание и результаты</h2>
+        
+        <div class="accordion" id="faqAccordion4">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q15">
+                        Как оценивают работу?
+                    </button>
+                </h2>
+                <div id="q15" class="accordion-collapse collapse" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body">
+                        <p>Работу проверяют <strong>4 эксперта</strong>.</p>
+                        <ul>
+                            <li><strong>5 (отлично):</strong> от 80 баллов</li>
+                            <li><strong>4 (хорошо):</strong> от 60 баллов</li>
+                            <li><strong>3 (удовлетворительно):</strong> от 40 баллов</li>
+                        </ul>
+                        <div class="success-box">
+                            <strong>Из опыта:</strong> «У меня CSS с недоделанным адаптивом — всё равно поставили 5 (84 балла). Главное — соблюсти требования задания.» Даже студент, сделавший только слайдер и таблицы, получил 5.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q16">
+                        Когда будут известны результаты?
+                    </button>
+                </h2>
+                <div id="q16" class="accordion-collapse collapse" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body">
+                        <p>Оценки известны <strong>примерно за месяц до официальной даты</strong>. Если вы хорошо выполнили задание, оценку не занизят.</p>
+                        <p>В группе, где у половины не работала БД или её вообще не было, не было ни одной двойки и тройки — всем натянули минимум 4.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q17">
+                        Что делать, если сделал мало?
+                    </button>
+                </h2>
+                <div id="q17" class="accordion-collapse collapse" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body">
+                        <p>Даже если сделали только HTML+CSS — это уже хорошо для пятёрки, если соблюдены все требования.</p>
+                        <ul>
+                            <li>Минимум для 5: соблюдение требований + ER-диаграмма + тест-кейсы + вёрстка</li>
+                            <li>PHP — желателен, но не критичен</li>
+                            <li>Не пытайтесь сделать всё идеально — лучше сделать что-то простое, но полное</li>
+                        </ul>
+                        <div class="warning-box">
+                            <strong>Важно:</strong> Не делайте только 1 файл. Нужно хотя бы 5 файлов для нормальной оценки.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q42">
+                        Дают ли баллы за Git?
+                    </button>
+                </h2>
+                <div id="q42" class="accordion-collapse collapse" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body">
+                        <span class="badge-warning">БОНУС</span>
+                        <p>Да, <strong>Git даёт дополнительные баллы</strong>.</p>
+                        <p>Нужно сделать <strong>минимум 3 коммита</strong>. Если планируете использовать — попросите установить Git в первый день.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 p-4" style="background: white; border-radius: 12px;">
+            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px;"> Краткая памятка</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul style="font-size: 15px; line-height: 2;">
+                        <li>✅ Приходите без опозданий (к 9:00)</li>
+                        <li>✅ Берите паспорт</li>
+                        <li>✅ Белый верх, чёрный низ</li>
+                        <li>✅ В первый день готовьте шаблоны</li>
+                        <li>✅ Соблюдайте чек-лист из 15 пунктов</li>
+                        <li>✅ Делайте ER-диаграмму + 3 тест-кейса</li>
+                        <li>✅ Просите Git в первый день</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul style="font-size: 15px; line-height: 2;">
+                        <li> Не берите телефон во второй день</li>
+                        <li>❌ Не приносите бумажные шпаргалки</li>
+                        <li>❌ Не разговаривайте с другими</li>
+                        <li>❌ Не забывайте htmlspecialchars()</li>
+                        <li> Не используйте mysql_* функции</li>
+                        <li>❌ Не забудьте alt у картинок</li>
+                        <li>❌ Не делайте только 1 файл</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Группа 822 | Демонстрационный экзамен 2026</p>
+        <p style="margin-top: 8px; opacity: 0.6;">Информация основана на опыте студентов и официальных требованиях • Обновлено 04.06.2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
